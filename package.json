@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
-    "@gofynd/angular-json-viewer": "^1.0.7",
     "@types/bootstrap": "^3.3.37",
     "@types/jquery": "^3.3.0",
     "bootstrap": "^4.0.0",
