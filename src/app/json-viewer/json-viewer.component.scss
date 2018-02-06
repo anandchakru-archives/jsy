@@ -1,3 +1,6 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../node_modules/bootstrap/scss/_variables.scss';
+
 .rep-obj {
     display: flex;
     white-space: normal;
@@ -9,7 +12,7 @@
   .pointer{
     cursor: pointer;
     &:hover{
-      background:#53a7ea;
+      background:$gray-400;
     }
   }
 
