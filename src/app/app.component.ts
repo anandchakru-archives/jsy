@@ -10,7 +10,7 @@ import * as jquery from 'jquery';
 export class AppComponent implements OnInit {
   err: string;
   input: string;
-  inputJson: object;
+  inputJson: JSON;
   expanded: boolean;
   copied: boolean = false;
   copyPrettyJsonCaption: string = 'Copy Pretty Json';
@@ -19,11 +19,8 @@ export class AppComponent implements OnInit {
   @ViewChild('copyPrettyJson') copyPrettyJson: ElementRef;
   @ViewChild('copyUglyJson') copyUglyJson: ElementRef;
 
-  constructor(private clipboardService: ClipboardService, private renderer2: Renderer2) {
-
-  }
+  constructor(private clipboardService: ClipboardService, private renderer2: Renderer2) { }
   ngOnInit(): void {
-    this.input = '{"a":1, "b":"foo", "c":[false,"false",null, "null", {"d":{"e":1.3e5,"f":1.3e5}}, false,"false",null, "null", {"d":{"e":1.3e5,"f":1.3e5}}, false,"false",null, "null", {"d":{"e":1.3e5,"f":1.3e5}}]}';
     this.update(this.input);
   }
   formatAndCopyPrettyJson(json: string) {
@@ -63,6 +60,10 @@ export class AppComponent implements OnInit {
     this.update(json);
   }
   private update(input: string) {
+    if (!input || !input.length) {
+      this.inputJson = JSON;
+      return;
+    }
     try {
       this.err = undefined;
       this.inputJson = JSON.parse(input);
