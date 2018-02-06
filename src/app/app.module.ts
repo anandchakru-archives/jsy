@@ -1,18 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
-
+import { JsonViewerComponent } from './json-viewer/json-viewer.component';
+import { ClipboardService } from './clipboard/clipboard.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JsonViewerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ClipboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

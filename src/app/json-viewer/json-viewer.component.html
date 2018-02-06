@@ -1,0 +1,15 @@
+<div class="json-viewer">
+    <div *ngFor="let it of items" class="item">
+        <div class="rep-obj" (click)="toggleOpend(it)" [class.pointer]="it.isExpandable">
+            <div>
+                <span class="item-key">{{it.key}}</span>
+                <span class="dot"> : </span>
+                <span [ngClass]="it.valueClasses">{{it.title}}</span>
+            </div>
+            <div class="toggler" *ngIf="it.isExpandable" [ngClass]="{'opened': it.isOpened}"></div>
+        </div>
+        <div *ngIf="it.isExpandable && it.isOpened" class="sub-child">
+            <json-viewer [json]="it.value" [expanded]="expanded"></json-viewer>
+        </div>
+    </div>
+</div>
