@@ -1,3 +1,7 @@
+# Demo
+Preview Demo gh-pages [here](https://anandchakru.github.io/jsy/)
+---
+
 # Jsy
 Angular 5 json minifier, formatter & viewer. It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
